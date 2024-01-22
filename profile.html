@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <link rel="stylesheet" type="text/css" href="profile.css">
+   </head>
+   <body>
+      <!--This creates a nav bar with a drop down menu-->
+      <div class="navbar">
+         <a href="#home">Home</a>
+         <a href="#news">News</a>
+         <div class="dropdown">
+            <button class="dropbtn">Create New 
+            <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+               <a href="profile.html">Create New</a>
+               <a href="assignmnet1page.html">Assignment 1 Page </a>
+            </div>
+         </div>
+      </div>
+      <!-- what this does is that it creates a form that takes different types of input values and stores them in a list -->
+      <div class="card">
+         <div id="form_container">
+            <ul style=" list-style-type: none; text-align: center; padding: 0; margin: 0; ">
+               <p><strong>Input Profile Information</strong></p>
+               <li><input placeholder="Name" type="text" id="name" /></li>
+               <li><input placeholder="Age" type="text" id="age" /></li>
+               <li><input placeholder="Phone Number" type="text" id="phoneNumber" /></li>
+               <li><input placeholder="Address" type="text" id="address" /></li>
+               <li><input placeholder="Hobbie 1" type="text" id="hobbies" /></li>
+               <li><input placeholder="Hobbie 2" type="text" id="hobbies1" /></li>
+               <li><input placeholder="Hobbie 3" type="text" id="hobbies2" /></li>
+               <li><input placeholder="Hobbie 4" type="text" id="hobbies3" /></li>
+               <li><input placeholder="Hobbie 5" type="text" id="hobbies4" /></li>
+               <li><input placeholder="Goal 1" type="text" id="goal1" /></li>
+               <li><input placeholder="Goal 2" type="text" id="goal2" /></li>
+               <li><input placeholder="Goal 3" type="text" id="goal3" /></li>
+               <li>
+                  <h1><input placeholder="Define a Heading" type="text" id="heading" /></h1>
+               </li>
+               <li>
+               <li>
+                  <p><textarea placeholder="Define Your Own Paragraph" id="paragraph1"></textarea></p>
+               </li>
+               <li>
+                  <h1><input placeholder="Happy?" type="text" id="happy" /></h1>
+               </li>
+               <li>
+                  <h2><input placeholder="Sad?" type="text" id="sad" /></h2>
+               </li>
+               <li>
+               <li>
+                  <p><textarea placeholder="Write a paragraph about yourself!" id="paragraph"></textarea></p>
+               </li>
+               <li><img><input style="margin-left: 108px;" placeholder="Image" type="file" id="image" /></img></li>
+               <li><a><input placeholder="Link" type="url" id="link" /></a></li>
+            </ul>
+         </div>
+      </div>
+      <!-- Create a button called Submit -->
+      <!-- This button also has js associated with it for when it's clicked-->
+      <div style="text-align: center;">
+         <button id="submit">Submit / Delete</button>
+      </div>
+      <hr>
+     
+      <!-- Creates a list to display user data -->
+      <!-- I have embedded heading, p, img, and a tags so they display in that structure -->
+      <!-- When the user inputs a value from the input list above it will show up over here  -->
+      <div id="inputProfile" style="text-align: center;">
+         <ul>
+            <li>
+               <h1><strong id="profileHeading">Profile Information</strong></h1>
+            </li>
+            <li><strong>Name: </strong> <span id="displayName"></span></li>
+            <li><strong>Age: </strong> <span id="displayAge"></span></li>
+            <li><strong>Phone Number: </strong> <span id="displayPhoneNumber"></span></li>
+            <li><strong>Address: </strong> <span id="displayAddress"></span></li>
+            <li>
+               <h1><strong>Mood </strong> </h1>
+            </li>
+            <li>
+               <h3><strong>Happy: </strong> <span id="displayHappy"></span></h3>
+            </li>
+            <li>
+               <h3><strong>Sad: </strong> <span id="displaySad"></span></h3>
+            </li>
+            <li>
+               <h1><strong>Biography </strong> </h1>
+            </li>
+            <li>
+               <p><strong>Paragraph: </strong><span id="displayParagraph"></span></p>
+            </li>
+            <li><img><strong>Image: </strong> <span id="displayImg"></span></img></li>
+            <!-- displays user input as a link which was inputted from the input list above -->
+            <li><a id="displaylink" href="#">Link: <span id="linkText"></span></a> </li>
+         </ul>
+      </div>
+      <hr>
+      <div id="inputProfile">
+         <ol style="text-align: center;">
+            <li>
+               <h1><strong id="profileHeading">My Hobbies</strong></h1>
+            </li>
+            <li><strong>Hobbie 1: </strong> <span id="displayHobbie"></span></li>
+            <li><strong>Hobbie 2:</strong> <span id="displayHobbie1"></span></li>
+            <li><strong>Hobbie 3:</strong> <span id="displayHobbie2"></span></li>
+            <li><strong>Hobbie 4:</strong> <span id="displayHobbie3"></span></li>
+            <li><strong>Hobbie 5: </strong> <span id="displayHobbie4"></span></li>
+         </ol>
+      </div>
+      <hr>
+      <div id="inputProfile">
+         <ol style="list-style-type: lower-roman; margin-left: 20px; text-align: center;">
+            <li>
+               <h1><strong id="profileHeading">My Goals</strong></h1>
+            </li>
+            <li><strong>Goal 1: </strong> <span id="displayGoal1"></span></li>
+            <li><strong>Goal 2:</strong> <span id="displayGoal2"></span></li>
+            <li><strong>Goal 3:</strong> <span id="displayGoal3"></span></li>
+         </ol>
+      </div>
+      <hr>
+      <div id="inputProfile">
+         <h1 style="text-align: center;"><strong> </strong> <span id="displayHeading"></span></h1>
+         <p style="text-align: center;"><strong> </strong><span id="displayParagraph1"></span></p>
+      </div>
+   </body>
+   <script type="module">
+      // Imports from Firebase 
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";  
+      import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js";
+      import { getAuth, onAuthStateChanged} from "https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js";
+      
+      // Firebase config
+      const firebaseConfig = {
+      apiKey: "AIzaSyBgNBZHjB4RN3NibaXOcG46sutJwOmfq2M",
+      authDomain: "login-65b5c.firebaseapp.com",
+      databaseURL: "https://login-65b5c-default-rtdb.firebaseio.com",
+      projectId: "login-65b5c",
+      storageBucket: "login-65b5c.appspot.com",
+      messagingSenderId: "923881971297",
+      appId: "1:923881971297:web:eff355f9537fce958bd420"
+      };
+      
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const database = getDatabase(app);
+      const auth = getAuth();
+      
+      // What this code is doing is when a user clicks on the submit button, 
+      // then the function is executed
+      document.getElementById("submit").addEventListener("click", function() {
+          // targets user's input by id
+          const name = document.getElementById("name").value;
+          const age = document.getElementById("age").value;
+          const happy = document.getElementById("happy").value;
+          const sad = document.getElementById("sad").value;
+          const paragraph = document.getElementById("paragraph").value;
+          const image = document.getElementById("image").value;
+          const link = document.getElementById("link").value;
+          const phoneNumber = document.getElementById("phoneNumber").value;
+          const address = document.getElementById("address").value;
+          const hobbies = document.getElementById("hobbies").value;
+          const hobbies1 = document.getElementById("hobbies1").value;
+          const hobbies2 = document.getElementById("hobbies2").value;
+          const hobbies3 = document.getElementById("hobbies3").value;
+          const hobbies4 = document.getElementById("hobbies4").value;
+          const goal1 = document.getElementById("goal1").value;
+          const goal2 = document.getElementById("goal2").value;
+          const goal3 = document.getElementById("goal3").value;
+          const heading = document.getElementById("heading").value;
+          const paragraph1 = document.getElementById("paragraph1").value;
+       
+          // Get the currently authenticated user
+          const user = auth.currentUser;
+          
+      // Store user data in the database
+      // what this does is that it stores the users input values into the database under the users node with their id
+              const db = getDatabase();
+              const userRef = ref(db, 'users/' + user.uid);
+              set(userRef, {
+                  name: name,
+                  age: age,
+                  happy: happy,
+                  sad: sad,
+                  paragraph: paragraph,
+                  image: image,
+                  link: link,
+                  phoneNumber: phoneNumber,
+                  address: address,
+                  hobbies: hobbies,
+                  hobbies1: hobbies1,
+                  hobbies2: hobbies2,
+                  hobbies3: hobbies3,
+                  hobbies4: hobbies4,
+                  goal1: goal1,
+                  goal2: goal2,
+                  goal3: goal3,
+                  heading: heading,
+                  paragraph1: paragraph1
+                 
+              });
+          
+      });
+      
+      // getting a current signed in user
+      onAuthStateChanged(auth, (user) => {
+      if (user) {
+      
+              // What this part is doing is that it's defining the database
+              // and location of where the data should be stored and by which id
+              const userRef = ref(database, 'users/' + user.uid);
+              // the onvalue is a method from firebase which listens for changes in userRef
+              onValue(userRef, (snapshot) => {
+                  // This if statement is looking to check if any data exists for the current user.
+                  // If it does, then display it.
+                  if (snapshot.exists()) {
+                      const userData = snapshot.val();
+      
+                      // This is retrieving the element by it's id and displaying it using the innerHTML property
+                      // I have stored the snapshot of the user data into the userData constant
+                      // innerHTML property is equal to userData with the corresponding element to display the user input
+                      document.getElementById("displayName").innerHTML = userData.name 
+                      document.getElementById("displayAge").innerHTML = userData.age 
+                      document.getElementById("displayHappy").innerHTML = userData.happy 
+                      document.getElementById("displaySad").innerHTML = userData.sad 
+                      document.getElementById("displayParagraph").innerHTML= userData.paragraph 
+                      document.getElementById("displayImg").innerHTML = userData.image 
+                      document.getElementById("displaylink").innerHTML = userData.link;
+                      document.getElementById("displayPhoneNumber").innerHTML = userData.phoneNumber;
+                      document.getElementById("displayAddress").innerHTML = userData.address;
+                      document.getElementById("displayHobbie").innerHTML = userData.hobbies;
+                      document.getElementById("displayHobbie1").innerHTML = userData.hobbies1;
+                      document.getElementById("displayHobbie2").innerHTML = userData.hobbies2;
+                      document.getElementById("displayHobbie3").innerHTML = userData.hobbies3;
+                      document.getElementById("displayHobbie4").innerHTML = userData.hobbies4;
+                      document.getElementById("displayGoal1").innerHTML = userData.goal1;
+                      document.getElementById("displayGoal2").innerHTML = userData.goal2;
+                      document.getElementById("displayGoal3").innerHTML = userData.goal3;
+                      document.getElementById("displayHeading").innerHTML = userData.heading;
+                      document.getElementById("displayParagraph1").innerHTML = userData.paragraph1;
+      
+      
+                     }
+              });
+          }
+      });
+      
+      
+      
+         
+      
+   </script>
+</html>

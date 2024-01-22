@@ -1,0 +1,272 @@
+
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Best Place to Visit in Canada</title>
+      <link rel="stylesheet" type="text/css" href="profile.css">
+      <style>
+         h1, h2, h3 {
+         font-family: 'Times New Roman', Times, serif;
+         font-size: 30px;
+         }
+         p {
+         font-weight: normal;
+         font-size: 15px;
+         font-family: monospace;
+         color: blue;
+         }
+         body {
+         margin: 20px;
+         border: 3px solid blue;
+         padding: 20px;
+         }
+      </style>
+   </head>
+   <body>
+      
+      <!--This creates a nav bar with a drop down menu-->
+      <div class="navbar">
+         <a href="#home">Home</a>
+         <a href="#news">News</a>
+         <div class="dropdown">
+            <button class="dropbtn">Create New 
+            <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+               <a href="todo.html">Create New</a>
+               <a href="index.html">Assignment 1 Page </a>
+            </div>
+         </div>
+      </div>
+      <!-- what this does is that it creates a form that takes different types of input values and stores them in a list -->
+      <div id="form_container">
+         <ul style="list-style-type: none; text-align: center; padding: 0; margin: 0;">
+            <p><strong>Input Information</strong></p>
+            <li><input placeholder="Place 1" type="text" id="place1" /></li>
+            <li><input placeholder="Place 2" type="text" id="place2" /></li>
+            <li><input placeholder="Place 3" type="text" id="place3" /></li>
+            <li><input placeholder="Link 1" type="text" id="link1" /></li>
+            <li><input placeholder="Link 2" type="text" id="link2" /></li>
+            <li><input placeholder="Link 3" type="text" id="link3" /></li>
+            <li>
+               <h1><input placeholder="Heading 1" type="text" id="head1" /></h1>
+            </li>
+            <li>
+               <h1><input placeholder="Heading 2" type="text" id="head2" /></h1>
+            </li>
+            <li>
+               <h1><input placeholder="Heading 3" type="text" id="head3" /></h1>
+            </li>
+            <li><input placeholder="Input Title" type="text" id="title" /></li>
+            <li><img><input style="margin-left: 108px;" placeholder="Image 1" type="file" id="image1" /></img></li>
+            <li><img><input style="margin-left: 108px;" placeholder="Image 2" type="file" id="image2" /></img></li>
+            <li>
+            <li>
+               <p><textarea placeholder="Write a paragraph! " id="paragraph"></textarea></p>
+            </li>
+         </ul>
+         <div style="text-align: center;">
+            <button id="submit">Submit / Delete</button>
+         </div>
+      </div>
+      <hr>
+      <h1 id="top">Niagara Falls</h1>
+      <img src="NiagaraFalls.JPG" alt="Niagara Falls" width="30%" align="right">
+      <p>
+         Niagara Falls is one of the seven wonders of the world. <br>
+         Niagara Falls has had many changes over the years and has <br>
+         evolved to be even more beautiful. My favorite thing to do <br>
+         at Niagara Falls is to watch the falls at night when the lights <br>
+         are shining on them!
+      </p>
+      <p style="font-size: 30px; color: purple;"><u>Places to go at Niagara Falls</u></p>
+
+     
+      <!-- Creates a list to display user data -->
+      <!-- When the user inputs a value from the input list above it will show up over here  -->
+      <ol style="list-style-type: lower-roman;  font-size: 20px;">
+         <li><strong>Place 1: </strong> <span id="displayPlace1"></span></li>
+         <li><strong>Place 2: </strong> <span id="displayPlace2"></span></li>
+         <li><strong>Place 3: </strong> <span id="displayPlace3"></span></li>
+         <li>
+            <strong>
+               Title: 
+               <span id="displayTitle">
+                  <title>Title 3</title>
+               </span>
+            </strong>
+         </li>
+      </ol>
+      <hr />
+      <h2 id="mid">Vancouver BC</h2>
+      <img src="Vancouver.JPG" alt="Vancouver" width="30%" align="right">
+      <p>
+         Vancouver BC is one of the major cities in Canada. <br>
+         It is the largest city in Canada and is located in the <br>
+         province of British Columbia. There are many tourist places <br>
+         to visit in Vancouver, and its attractions bring people <br>
+         from around the world! Personally, I have never been to <br>
+         Vancouver but would love to go!
+      </p>
+      <p style="font-size: 30px; color: purple;"><u>Links of Place to go in Vancouver </u></p>
+      <!-- Creates a list to display user data -->
+      <ul style="font-size: 20px;">
+         <li><a href="#" id="displayLink1"><span>Link 1</span></a></li>
+         <li><a href="#" id="displayLink2"><span>Link 2</span></a></li>
+         <li><a href="#" id="displayLink3"><span>Link 3</span></a></li>
+      </ul>
+      <hr />
+      <h3>The Rocky Mountains</h3>
+      <img src="Rocky.JPG" alt="Rocky Mountains" width="30%" align="right">
+      <p>
+         The Rocky Mountains are located in British Columbia and are <br>
+         4800 km in distance. The Rocky Mountains are so big that they <br>
+         reach New Mexico. The Rocky Mountains are on my list to travel <br>
+         to, and I will be going soon!
+      </p>
+      <p style="font-size: 30px; color: purple;"><u>List of Headings of Places to go at the Rocky Mountains  </u></p>
+        <!-- Creates a list to display user data (heading) -->
+        <ol style="font-size: 20px;">
+         <li>
+            <h1 id="displayHead1"><span>Heading: </span></h1>
+         </li>
+         <li>
+            <h1 id="displayHead2"><span>Heading: </span></h1>
+         </li>
+         <li>
+            <h1 id="displayHead3"><span>Heading: </span></h1>
+         </li>
+      </ol>
+      <hr/>
+       <!-- Nested list to display user data (img)-->
+       <!-- Also has email and back to top middle functionality-->
+
+       <div id="inputProfile">
+      <ul>
+         <li><a href="#top">Back to top</a></li>
+         <li><a href="#mid">Back to middle</a></li>
+         <ol style="list-style-type: lower-alpha; font-size: 20px;">
+            <li><a href="mailto:abdullahbaloch@trentu.ca">Send Email to me</a></li>
+            <li><img><strong>Image: </strong> <span id="displayImg1"></span></img></li>
+            <li><img><strong>Image: </strong> <span id="displayImg2"></span></img></li>
+         </ol>
+         <li>
+            <p><strong>Paragraph: </strong><span id="displayParagraph"></span></p>
+         </li>
+      </ul>
+      <hr>
+      <div>
+      <ul>
+         <li>COIS Department</li>
+      </ul>
+      <hr>
+      <script type="module">
+         // Initialize Firebase
+         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
+         import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js";
+         import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js";
+         import { onValue } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js";
+         
+         const firebaseConfig = {
+         apiKey: "AIzaSyBgNBZHjB4RN3NibaXOcG46sutJwOmfq2M",
+         authDomain: "login-65b5c.firebaseapp.com",
+         databaseURL: "https://login-65b5c-default-rtdb.firebaseio.com",
+         projectId: "login-65b5c",
+         storageBucket: "login-65b5c.appspot.com",
+         messagingSenderId: "923881971297",
+         appId: "1:923881971297:web:eff355f9537fce958bd420"
+         };
+         
+         // Initialize Firebase
+         const app = initializeApp(firebaseConfig);
+         const database = getDatabase(app);
+         const auth = getAuth();
+         
+         // When the user clicks the "Submit" button, this function is executed
+         document.getElementById("submit").addEventListener("click", function() {
+             const place1 = document.getElementById("place1").value;
+             const place2 = document.getElementById("place2").value;
+             const place3 = document.getElementById("place3").value;
+             const link1 = document.getElementById("link1").value;
+             const link2 = document.getElementById("link2").value;
+             const link3 = document.getElementById("link3").value;
+             const head1 = document.getElementById("head1").value;
+             const head2 = document.getElementById("head2").value;
+             const head3 = document.getElementById("head3").value;
+             const title = document.getElementById("title").value;
+             const image1 = document.getElementById("image1").value;
+             const image2 = document.getElementById("image2").value;
+             const paragraph = document.getElementById("paragraph").value;
+         
+         
+         
+         
+         
+         
+             const user = auth.currentUser;
+         
+             // Stores the user's data into the database
+             const db = getDatabase();
+             const userRef = ref(db, 'places/' + user.uid);
+             set(userRef, {
+                 place1: place1,
+                 place2: place2,
+                 place3: place3,
+                 link1: link1,
+                 link2: link2,
+                 link3: link3,
+                 head1: head1,
+                 head2: head2,
+                 head3: head3,
+                 title: title,
+                 image1: image1,
+                 image2: image2,
+                 paragraph: paragraph
+             });
+         });
+
+       // getting a current  signed in user
+         
+         onAuthStateChanged(auth, (user) => {
+             if (user) {
+
+               // What this part is doing is that it's defining the database
+              // and location of where the data should be stored and by which id
+                 const db = getDatabase();
+                 const userRef = ref(db, 'places/' + user.uid);
+                 onValue(userRef, (snapshot) => {
+                     if (snapshot.exists()) {
+                         const userData = snapshot.val();
+                         
+                      // This is retrieving the element by it's id and displaying it using the innerHTML property
+                      // I have stored the snapshot of the user data into the userData constant
+                      // innerHTML property is equal to userData with the corresponding element to display the user input
+                    
+                        document.getElementById("displayPlace1").innerHTML = userData.place1;
+			               document.getElementById("displayPlace2").innerHTML = userData.place2;
+			               document.getElementById("displayPlace3").innerHTML = userData.place3;
+                        document.getElementById("displayLink1").innerHTML = userData.link1;
+                        document.getElementById("displayLink2").innerHTML = userData.link2;
+                        document.getElementById("displayLink3").innerHTML = userData.link3;
+                        document.getElementById("displayHead1").innerHTML = userData.head1;
+                        document.getElementById("displayHead2").innerHTML = userData.head2;
+                        document.getElementById("displayHead3").innerHTML = userData.head3;
+                        document.getElementById("displayTitle").innerHTML = userData.title;
+                        document.getElementById("displayImg1").innerHTML = userData.image1;
+                        document.getElementById("displayImg2").innerHTML = userData.image2;
+                        document.getElementById("displayParagraph").innerHTML = userData.paragraph;
+
+                        
+         
+         
+         
+                     }
+                 });
+             }
+         });
+
+
+         
+      </script>
+   </body>
+</html>
